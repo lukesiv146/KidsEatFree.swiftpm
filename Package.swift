@@ -14,7 +14,7 @@ let package = Package(
     ],
     products: [
         .iOSApplication(
-            name: "KidsEatFree",
+            name: "KidsEatFree!",
             targets: ["AppModule"],
             bundleIdentifier: "phs.KidsEatFree",
             displayVersion: "1.0",
