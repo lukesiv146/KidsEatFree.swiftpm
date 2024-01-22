@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct DaysOfWeekView: View {
+    let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(daysOfWeek, id: \.self) { day in
+                    NavigationLink(destination: DayView(day: day)) {
+                        Text(day)
+                    }
+                }
+            }
+            .navigationTitle("Days of the Week")
+        }
+    }
+}
+
+struct DayView: View {
+    let day: String
+    
+    var body: some View {
+        Text("This is \(day)'s View")
+            .navigationTitle(day)
     }
 }
 
